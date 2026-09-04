@@ -1,8 +1,8 @@
 import React from 'react';
 import { useAuth } from '../context/AuthContext';
-import { Phone, Mail, Globe, ShieldCheck, LogOut, Building2, User } from 'lucide-react';
+import { Phone, Mail, Globe, ShieldCheck, LogOut, Building2, User, Sun, Moon } from 'lucide-react';
 
-export default function Navbar() {
+export default function Navbar({ dayMode = false, onToggleDayMode }) {
   const { user, logout } = useAuth();
 
   return (
@@ -58,6 +58,16 @@ export default function Navbar() {
 
       {/* User Actions */}
       <div className="flex items-center space-x-4">
+        <button
+          type="button"
+          onClick={onToggleDayMode}
+          className="vm-theme-toggle"
+          title={dayMode ? 'Switch to night mode' : 'Switch to day mode'}
+          aria-label={dayMode ? 'Switch to night mode' : 'Switch to day mode'}
+        >
+          {dayMode ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />}
+          <span>{dayMode ? 'Night' : 'Day'}</span>
+        </button>
         <div className="flex items-center space-x-3 pl-3 border-l border-slate-800">
           <div className="text-right hidden sm:block">
             <p className="text-sm font-semibold text-white">{user?.name || 'MYN Sales'}</p>

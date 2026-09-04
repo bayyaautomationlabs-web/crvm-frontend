@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import {
   LayoutDashboard,
   Search,
+  Building2,
   Linkedin,
   KanbanSquare,
   FileText,
@@ -15,6 +16,7 @@ import {
 const NAV_ITEMS = [
   { path: '/', label: 'Executive Dashboard', icon: LayoutDashboard },
   { path: '/google-leads', label: 'Google Leads Finder', icon: Search, badge: 'Live' },
+  { path: '/vendors', label: 'Vendor Management', icon: Building2, badge: 'Live' },
   { path: '/linkedin', label: 'LinkedIn Outreach', icon: Linkedin, badge: '25/day' },
   { path: '/pipeline', label: 'Kanban CRM Pipeline', icon: KanbanSquare },
   { path: '/templates', label: 'B2B Pitch Templates', icon: FileText },
