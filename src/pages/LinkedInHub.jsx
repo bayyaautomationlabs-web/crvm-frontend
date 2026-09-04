@@ -155,9 +155,9 @@ If you have any upcoming facility expansions or renovations, we would be glad to
   };
 
   return (
-    <div className="space-y-6">
+    <div className="linkedin-hub space-y-6">
       {/* Header Banner */}
-      <div className="p-6 rounded-3xl bg-gradient-to-r from-blue-950/80 via-slate-900 to-slate-900 border border-blue-800/40 flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div className="linkedin-hero p-6 rounded-3xl bg-gradient-to-r from-blue-950/80 via-slate-900 to-slate-900 border border-blue-800/40 flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
           <div className="flex items-center space-x-2 text-blue-400 text-xs font-bold uppercase mb-1">
             <Linkedin className="w-4 h-4 text-blue-400" />
@@ -191,7 +191,7 @@ If you have any upcoming facility expansions or renovations, we would be glad to
 
       {/* Safety & Quota Status Row */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div className="p-5 rounded-2xl bg-gradient-to-br from-slate-900 to-emerald-950/30 border border-emerald-900/40">
+        <div className="linkedin-status-card linkedin-throttle p-5 rounded-2xl bg-gradient-to-br from-slate-900 to-emerald-950/30 border border-emerald-900/40">
           <div className="flex items-center space-x-2 text-emerald-400 text-xs font-bold uppercase mb-2">
             <ShieldCheck className="w-4 h-4 text-emerald-400" />
             <span>Safe Daily Throttle</span>
@@ -205,7 +205,7 @@ If you have any upcoming facility expansions or renovations, we would be glad to
           </p>
         </div>
 
-        <div className="p-5 rounded-2xl bg-gradient-to-br from-slate-900 to-blue-950/30 border border-blue-900/40">
+        <div className="linkedin-status-card linkedin-network p-5 rounded-2xl bg-gradient-to-br from-slate-900 to-blue-950/30 border border-blue-900/40">
           <div className="flex items-center space-x-2 text-blue-400 text-xs font-bold uppercase mb-2">
             <UserCheck className="w-4 h-4 text-blue-400" />
             <span>1st Degree Network</span>
@@ -219,7 +219,7 @@ If you have any upcoming facility expansions or renovations, we would be glad to
           <p className="text-xs text-slate-400 mt-1">Ready for automated portfolio & BOQ pitches.</p>
         </div>
 
-        <div className="p-5 rounded-2xl bg-gradient-to-br from-slate-900 to-purple-950/30 border border-purple-900/40">
+        <div className="linkedin-status-card linkedin-inbound p-5 rounded-2xl bg-gradient-to-br from-slate-900 to-purple-950/30 border border-purple-900/40">
           <div className="flex items-center space-x-2 text-purple-400 text-xs font-bold uppercase mb-2">
             <MessageSquare className="w-4 h-4 text-purple-400" />
             <span>Inbound Replies & Inquiries</span>
@@ -252,7 +252,7 @@ If you have any upcoming facility expansions or renovations, we would be glad to
       )}
 
       {/* Prospects Table */}
-      <div className="p-6 rounded-2xl bg-slate-900/70 border border-slate-800">
+      <div className="linkedin-queue-card p-6 rounded-2xl bg-slate-900/70 border border-slate-800">
         <div className="flex items-center justify-between mb-4">
           <div>
             <h3 className="text-base font-bold text-white">LinkedIn Target Queue & Connections</h3>
