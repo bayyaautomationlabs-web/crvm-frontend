@@ -35,7 +35,7 @@ function ProtectedLayout() {
   }
 
   return (
-    <div className="crvm-app-shell blue-mode min-h-screen selection:bg-cyan-600 selection:text-white">
+    <div className="crvm-app-shell card-blue-mode min-h-screen selection:bg-cyan-600 selection:text-white">
       <Sidebar />
       <div className="crvm-app-main flex min-w-0 flex-col">
         <Navbar />
