@@ -47,6 +47,9 @@ export default function Dashboard() {
     fetchDashboardData();
   }, []);
 
+  const chartRows = (stats?.dailyCounts || []).slice(-14);
+  const chartMax = Math.max(1, ...chartRows.map((row) => Number(row.salesLeads || 0) + Number(row.vendors || 0)));
+
   const formatCurrency = (amount) => {
     if (!amount) return '₹0';
     if (amount >= 10000000) return `₹${(amount / 10000000).toFixed(2)} Cr`;
@@ -165,6 +168,7 @@ export default function Dashboard() {
       </div>
 
       {/* Daily vendor and sales-lead intake */}
+      <div className="sales-intake-grid">
       <section className="p-6 rounded-2xl bg-slate-900/70 border border-slate-800/80">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-5">
           <div>
@@ -217,6 +221,37 @@ export default function Dashboard() {
           </table>
         </div>
       </section>
+
+      <aside className="sales-chart-rail" aria-label="Performance charts">
+        <div className="sales-chart-card">
+          <div className="sales-chart-head"><div><h3>Average items per sale</h3><p><strong>{stats?.salesLeadCount || 0}</strong> live sales leads</p></div><button type="button" aria-label="Open chart">↗</button></div>
+          <div className="sales-dot-chart" aria-hidden="true">
+            {Array.from({ length: 14 }, (_, index) => {
+              const row = chartRows[index] || {};
+              const value = Number(row.salesLeads || 0) + Number(row.vendors || 0);
+              return <span key={index} style={{ '--bar': `${Math.max(8, Math.round((value / chartMax) * 76))}%` }}><i /></span>;
+            })}
+          </div>
+          <div className="sales-chart-axis"><span>14 days</span><span>Live intake</span></div>
+        </div>
+        <div className="sales-chart-card">
+          <div className="sales-chart-head"><div><h3>Average sale value</h3><p><strong>{formatCurrency(stats?.pipelineValue || 0)}</strong> pipeline value</p></div><button type="button" aria-label="Open chart">↗</button></div>
+          <div className="sales-bars" aria-hidden="true">
+            {Array.from({ length: 14 }, (_, index) => {
+              const row = chartRows[index] || {};
+              const value = Number(row.salesLeads || 0) + Number(row.vendors || 0);
+              return <span key={index} style={{ '--bar': `${Math.max(10, Math.round((value / chartMax) * 84))}%` }}><i /><b /></span>;
+            })}
+          </div>
+          <div className="sales-chart-axis"><span>1</span><span>7</span><span>14</span><span>Daily</span></div>
+        </div>
+        <div className="sales-chart-card sales-country-card">
+          <div className="sales-chart-head"><div><h3>Most active markets</h3><p>Live locations in your CRM</p></div><button type="button" aria-label="More chart options">⋮</button></div>
+          <div className="sales-map-dots" aria-hidden="true">{Array.from({ length: 70 }, (_, index) => <i key={index} style={{ opacity: .18 + ((index * 7) % 6) / 10 }} />)}</div>
+          <div className="sales-market-pills"><span><b>#1</b> India <small>{stats?.totalLeads || 0} records</small></span><span><b>#2</b> South India <small>CRM activity</small></span><span><b>#3</b> PAN India <small>Vendor network</small></span></div>
+        </div>
+      </aside>
+      </div>
 
       {/* 4 Focused Core Services Overview */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
