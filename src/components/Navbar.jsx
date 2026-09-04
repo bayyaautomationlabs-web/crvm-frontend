@@ -1,8 +1,8 @@
 import React from 'react';
 import { useAuth } from '../context/AuthContext';
-import { Phone, Mail, LogOut, Building2, User, Sun, Moon, Bell, MessageSquare, Search } from 'lucide-react';
+import { Phone, Mail, LogOut, Building2, User, Bell, MessageSquare, Search } from 'lucide-react';
 
-export default function Navbar({ dayMode = false, onToggleDayMode }) {
+export default function Navbar() {
   const { user, logout } = useAuth();
 
   return (
@@ -23,16 +23,6 @@ export default function Navbar({ dayMode = false, onToggleDayMode }) {
         <button className="sales-circle-button" type="button" title="Search"><Search className="w-4 h-4" /></button>
         <button className="sales-circle-button" type="button" title="Notifications"><Bell className="w-4 h-4" /></button>
         <button className="sales-circle-button" type="button" title="Messages"><MessageSquare className="w-4 h-4" /></button>
-        <button
-          type="button"
-          onClick={onToggleDayMode}
-          className="vm-theme-toggle sales-theme-toggle"
-          title={dayMode ? 'Switch to night mode' : 'Switch to day mode'}
-          aria-label={dayMode ? 'Switch to night mode' : 'Switch to day mode'}
-        >
-          {dayMode ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />}
-          <span>{dayMode ? 'Night' : 'Day'}</span>
-        </button>
         <div className="sales-user-chip">
           <div className="sales-avatar"><User className="w-4 h-4" /></div>
           <div><strong>{user?.name || 'MYN Admin'}</strong><small>{user?.role || 'Admin'}</small></div>

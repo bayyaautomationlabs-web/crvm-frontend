@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './context/AuthContext';
 
@@ -18,8 +18,6 @@ import VendorManagement from './pages/VendorManagement';
 
 function ProtectedLayout() {
   const { isAuthenticated, loading } = useAuth();
-  // The new CRVM workspace opens in the clear sales-dashboard palette by default.
-  const [dayMode, setDayMode] = useState(() => localStorage.getItem('crvm_day_mode') !== 'false');
 
   if (loading) {
     return (
@@ -37,10 +35,10 @@ function ProtectedLayout() {
   }
 
   return (
-    <div className={`crvm-app-shell min-h-screen selection:bg-cyan-600 selection:text-white ${dayMode ? 'day-mode' : ''}`}>
+    <div className="crvm-app-shell blue-mode min-h-screen selection:bg-cyan-600 selection:text-white">
       <Sidebar />
       <div className="crvm-app-main flex min-w-0 flex-col">
-        <Navbar dayMode={dayMode} onToggleDayMode={() => { const next = !dayMode; setDayMode(next); localStorage.setItem('crvm_day_mode', String(next)); }} />
+        <Navbar />
         <main className="crvm-content flex-1 overflow-y-auto p-6 md:p-8">
           <div className="max-w-7xl mx-auto">
             <Routes>
