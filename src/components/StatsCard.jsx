@@ -20,7 +20,7 @@ export default function StatsCard({ title, value, subtitle, icon: Icon, trend, c
   };
 
   return (
-    <div className={`p-5 rounded-2xl bg-gradient-to-br ${colorMap[color]} border backdrop-blur-md relative overflow-hidden transition-all hover:translate-y-[-2px] hover:shadow-lg`}>
+    <div className={`sales-stat-card sales-stat-${color} p-5 rounded-2xl bg-gradient-to-br ${colorMap[color]} border backdrop-blur-md relative overflow-hidden transition-all hover:translate-y-[-2px] hover:shadow-lg`}>
       <div className="flex items-center justify-between mb-3">
         <span className="text-xs font-semibold text-slate-400 uppercase tracking-wider">{title}</span>
         {Icon && (

@@ -18,7 +18,8 @@ import VendorManagement from './pages/VendorManagement';
 
 function ProtectedLayout() {
   const { isAuthenticated, loading } = useAuth();
-  const [dayMode, setDayMode] = useState(() => localStorage.getItem('crvm_day_mode') === 'true');
+  // The new CRVM workspace opens in the clear sales-dashboard palette by default.
+  const [dayMode, setDayMode] = useState(() => localStorage.getItem('crvm_day_mode') !== 'false');
 
   if (loading) {
     return (
