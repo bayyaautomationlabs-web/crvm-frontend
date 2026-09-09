@@ -5,16 +5,17 @@ import { AuthProvider, useAuth } from './context/AuthContext';
 import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
 
-import Dashboard from './pages/Dashboard';
+import Dashboard from './pages/OperationsDashboard';
 import GoogleLeads from './pages/GoogleLeads';
 import LinkedInHub from './pages/LinkedInHub';
 import Pipeline from './pages/Pipeline';
 import Templates from './pages/Templates';
-import MakeScenarios from './pages/MakeScenarios';
+import MakeScenarios from './pages/SourceSync';
 import Settings from './pages/Settings';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import VendorManagement from './pages/VendorManagement';
+import SalesWorkspace, { DailyReport } from './pages/SalesWorkspace';
 
 function ProtectedLayout() {
   const { isAuthenticated, loading } = useAuth();
@@ -43,11 +44,13 @@ function ProtectedLayout() {
           <div className="max-w-7xl mx-auto">
             <Routes>
               <Route path="/" element={<Dashboard />} />
-              <Route path="/google-leads" element={<GoogleLeads />} />
+              <Route path="/leads" element={<SalesWorkspace />} />
+              <Route path="/reports" element={<DailyReport />} />
+              <Route path="/google-leads" element={<Navigate to="/make-scenarios" replace />} />
               <Route path="/vendors" element={<VendorManagement />} />
-              <Route path="/linkedin" element={<LinkedInHub />} />
+              <Route path="/linkedin" element={<Navigate to="/leads" replace />} />
               <Route path="/pipeline" element={<Pipeline />} />
-              <Route path="/templates" element={<Templates />} />
+              <Route path="/templates" element={<Navigate to="/leads" replace />} />
               <Route path="/make-scenarios" element={<MakeScenarios />} />
               <Route path="/settings" element={<Settings />} />
               <Route path="*" element={<Navigate to="/" replace />} />

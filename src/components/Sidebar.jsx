@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import {
   LayoutDashboard,
+  Phone,
   Search,
   Building2,
   Linkedin,
@@ -15,12 +16,11 @@ import {
 
 const NAV_ITEMS = [
   { path: '/', label: 'Dashboard', icon: LayoutDashboard },
-  { path: '/google-leads', label: 'Google Finder', icon: Search, badge: 'Live' },
-  { path: '/vendors', label: 'Vendor Register', icon: Building2, badge: 'Live' },
-  { path: '/linkedin', label: 'Sales Outreach', icon: Linkedin, badge: '25/day' },
+  { path: '/leads', label: 'Leads & Call Guide', icon: Phone },
+  { path: '/vendors', label: 'Vendor Register', icon: Building2 },
+  { path: '/reports', label: 'Daily Report', icon: FileText },
   { path: '/pipeline', label: 'CRM Pipeline', icon: KanbanSquare },
-  { path: '/templates', label: 'Pitch Templates', icon: FileText },
-  { path: '/make-scenarios', label: 'Make Automation', icon: Zap, badge: '5 Flows' },
+  { path: '/make-scenarios', label: 'Synchronize', icon: Zap },
   { path: '/settings', label: 'Settings', icon: Settings },
 ];
 

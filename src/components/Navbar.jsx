@@ -20,9 +20,6 @@ export default function Navbar() {
           <a href="mailto:sales@meetyourneeds.in" title="Lead inquiries"><Mail className="w-3.5 h-3.5" /><span>sales@meetyourneeds.in</span></a>
           <a href="tel:+917207929888" title="Direct sales hotline"><Phone className="w-3.5 h-3.5" /><span>+91 72079 29888</span></a>
         </div>
-        <button className="sales-circle-button" type="button" title="Search"><Search className="w-4 h-4" /></button>
-        <button className="sales-circle-button" type="button" title="Notifications"><Bell className="w-4 h-4" /></button>
-        <button className="sales-circle-button" type="button" title="Messages"><MessageSquare className="w-4 h-4" /></button>
         <div className="sales-user-chip">
           <div className="sales-avatar"><User className="w-4 h-4" /></div>
           <div><strong>{user?.name || 'MYN Admin'}</strong><small>{user?.role || 'Admin'}</small></div>
