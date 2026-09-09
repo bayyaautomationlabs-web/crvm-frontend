@@ -7,7 +7,6 @@ export default function Register() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [role, setRole] = useState('sales');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const { register } = useAuth();
@@ -18,7 +17,7 @@ export default function Register() {
     try {
       setLoading(true);
       setError('');
-      await register(name, email, password, role);
+      await register(name, email, password);
       navigate('/');
     } catch (err) {
       setError(err.response?.data?.error || 'Registration failed');
@@ -40,8 +39,8 @@ export default function Register() {
               <form onSubmit={handleSubmit} className="crvm-auth-form" autoComplete="off">
                 <div className="crvm-field"><label htmlFor="register-name">Full Name</label><input id="register-name" required value={name} onChange={(event) => setName(event.target.value)} placeholder="Your name" /><UserRound size={16} /></div>
                 <div className="crvm-field"><label htmlFor="register-email">Official Email</label><input id="register-email" type="email" required value={email} onChange={(event) => setEmail(event.target.value)} placeholder="you@company.com" /><Mail size={16} /></div>
-                <div className="crvm-field"><label htmlFor="register-password">Access Key</label><input id="register-password" type="password" required value={password} onChange={(event) => setPassword(event.target.value)} placeholder="Minimum 6 characters" /><LockKeyhole size={16} /></div>
-                <div className="crvm-field"><label htmlFor="register-role">Role</label><select id="register-role" value={role} onChange={(event) => setRole(event.target.value)}><option value="sales">Sales Executive</option><option value="manager">Project / Sales Manager</option><option value="admin">Administrator</option></select></div>
+                <div className="crvm-field"><label htmlFor="register-password">Access Key</label><input id="register-password" type="password" required minLength={8} value={password} onChange={(event) => setPassword(event.target.value)} placeholder="At least 8 characters" /><LockKeyhole size={16} /></div>
+                <p className="crvm-auth-help">New accounts are created as Sales Executive accounts. An administrator can change access later.</p>
                 <button className="crvm-auth-button" type="submit" disabled={loading}><span>{loading ? 'Provisioning...' : 'Create Account'}</span><span className="crvm-bolt"><ArrowRight size={16} /></span></button>
                 {error && <div className="crvm-auth-error">{error}</div>}
               </form>

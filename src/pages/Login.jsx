@@ -4,8 +4,8 @@ import { useAuth } from '../context/AuthContext';
 import { UserRound, LockKeyhole } from 'lucide-react';
 
 export default function Login() {
-  const [email, setEmail] = useState('contact.meetyourneeds@gmail.com');
-  const [password, setPassword] = useState('admin123');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const { login } = useAuth();
@@ -19,7 +19,7 @@ export default function Login() {
       await login(email, password);
       navigate('/');
     } catch (err) {
-      setError(err.response?.data?.error || 'Invalid credentials');
+      setError(err.response?.data?.error || 'Login failed. Check the email and password, then try again.');
     } finally {
       setLoading(false);
     }

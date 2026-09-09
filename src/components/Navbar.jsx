@@ -24,7 +24,7 @@ export default function Navbar() {
           <div className="sales-avatar"><User className="w-4 h-4" /></div>
           <div><strong>{user?.name || 'MYN Admin'}</strong><small>{user?.role || 'Admin'}</small></div>
         </div>
-        <button onClick={logout} className="sales-logout" title="Sign Out"><LogOut className="w-4 h-4" /></button>
+        <button onClick={logout} className="sales-logout" title="Sign out of CRVM"><LogOut className="w-4 h-4" /><span>Log out</span></button>
       </div>
     </header>
   );
