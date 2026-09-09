@@ -29,8 +29,8 @@ export default function LeadModal({ isOpen, onClose, lead, onSaved }) {
     phone: '',
     email: '',
     website: '',
-    city: 'Bangalore',
-    state: 'Karnataka',
+    city: 'Hyderabad',
+    state: 'Telangana',
     address: '',
     category: 'turnkey_fitout',
     status: 'new',
@@ -52,8 +52,8 @@ export default function LeadModal({ isOpen, onClose, lead, onSaved }) {
         phone: lead.phone || '',
         email: lead.email || '',
         website: lead.website || '',
-        city: lead.city || 'Bangalore',
-        state: lead.state || 'Karnataka',
+        city: lead.city || 'Hyderabad',
+        state: lead.state || 'Telangana',
         address: lead.address || '',
         category: lead.category || 'turnkey_fitout',
         status: lead.status || 'new',
@@ -70,8 +70,8 @@ export default function LeadModal({ isOpen, onClose, lead, onSaved }) {
         phone: '',
         email: '',
         website: '',
-        city: 'Bangalore',
-        state: 'Karnataka',
+        city: 'Hyderabad',
+        state: 'Telangana',
         address: '',
         category: 'turnkey_fitout',
         status: 'new',
@@ -296,9 +296,8 @@ export default function LeadModal({ isOpen, onClose, lead, onSaved }) {
                 <option value="google">Google Finder / Places</option>
                 <option value="google_maps">Google Maps via Make</option>
                 <option value="linkedin">LinkedIn Outreach</option>
-                <option value="apify">Apify</option>
-                <option value="apify_linkedin">LinkedIn via Apify</option>
-                <option value="apify_google_maps">Google Maps via Apify</option>
+                <option value="osm_overpass">OpenStreetMap / Overpass</option>
+                <option value="foursquare">Foursquare Places</option>
                 <option value="website">Website Inquiry</option>
                 <option value="manual">Manual Direct Lead</option>
               </select>
