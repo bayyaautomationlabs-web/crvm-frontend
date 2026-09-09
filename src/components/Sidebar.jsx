@@ -18,6 +18,7 @@ import {
 const NAV_ITEMS = [
   { path: '/', label: 'Dashboard', icon: LayoutDashboard },
   { path: '/leads', label: 'Leads & Call Guide', icon: Phone },
+  { path: '/linkedin', label: 'LinkedIn Shortlist', icon: Linkedin },
   { path: '/vendors', label: 'Vendor Register', icon: Building2 },
   { path: '/reports', label: 'Daily Report', icon: FileText },
   { path: '/training', label: 'Training', icon: BookOpen },

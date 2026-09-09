@@ -17,6 +17,7 @@ import Register from './pages/Register';
 import VendorManagement from './pages/VendorManagement';
 import SalesWorkspace, { DailyReport } from './pages/SalesWorkspace';
 import Training from './pages/Training';
+import ConnectionDesk from './pages/ConnectionDesk';
 
 function ProtectedLayout() {
   const { isAuthenticated, loading } = useAuth();
@@ -50,7 +51,7 @@ function ProtectedLayout() {
               <Route path="/training" element={<Training />} />
               <Route path="/google-leads" element={<Navigate to="/make-scenarios" replace />} />
               <Route path="/vendors" element={<VendorManagement />} />
-              <Route path="/linkedin" element={<Navigate to="/leads" replace />} />
+              <Route path="/linkedin" element={<ConnectionDesk />} />
               <Route path="/pipeline" element={<Pipeline />} />
               <Route path="/templates" element={<Navigate to="/leads" replace />} />
               <Route path="/make-scenarios" element={<MakeScenarios />} />
