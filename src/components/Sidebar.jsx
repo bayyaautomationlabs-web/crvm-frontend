@@ -11,7 +11,8 @@ import {
   Zap,
   Settings,
   Flame,
-  ArrowUpRight
+  ArrowUpRight,
+  BookOpen
 } from 'lucide-react';
 
 const NAV_ITEMS = [
@@ -19,6 +20,7 @@ const NAV_ITEMS = [
   { path: '/leads', label: 'Leads & Call Guide', icon: Phone },
   { path: '/vendors', label: 'Vendor Register', icon: Building2 },
   { path: '/reports', label: 'Daily Report', icon: FileText },
+  { path: '/training', label: 'Training', icon: BookOpen },
   { path: '/pipeline', label: 'CRM Pipeline', icon: KanbanSquare },
   { path: '/make-scenarios', label: 'Synchronize', icon: Zap },
   { path: '/settings', label: 'Settings', icon: Settings },

@@ -16,6 +16,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import VendorManagement from './pages/VendorManagement';
 import SalesWorkspace, { DailyReport } from './pages/SalesWorkspace';
+import Training from './pages/Training';
 
 function ProtectedLayout() {
   const { isAuthenticated, loading } = useAuth();
@@ -46,6 +47,7 @@ function ProtectedLayout() {
               <Route path="/" element={<Dashboard />} />
               <Route path="/leads" element={<SalesWorkspace />} />
               <Route path="/reports" element={<DailyReport />} />
+              <Route path="/training" element={<Training />} />
               <Route path="/google-leads" element={<Navigate to="/make-scenarios" replace />} />
               <Route path="/vendors" element={<VendorManagement />} />
               <Route path="/linkedin" element={<Navigate to="/leads" replace />} />
